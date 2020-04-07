@@ -77,22 +77,23 @@ function startCounter(time) {
 //Comment Button Functionality
 let commentForm = document.querySelector("#comment-form")
 commentForm.addEventListener("submit", function(e) {
-    e.preventDefault()
-    let newComment = e.target.comment.value
-    let newCommentSpan = document.createElement("span")
-    newCommentSpan.style.display = "block"
-    newCommentSpan.innerText = newComment
-    let commentParent = document.querySelector("#list")
-    commentParent.appendChild(newCommentSpan)
-    commentForm.reset()
-})
-
+        e.preventDefault()
+        let newComment = e.target.comment.value
+        let newCommentSpan = document.createElement("span")
+        newCommentSpan.style.display = "block"
+        newCommentSpan.innerText = newComment
+        let commentParent = document.querySelector("#list")
+        commentParent.appendChild(newCommentSpan)
+        commentForm.reset()
+    })
+    //Renders All Heart Likes
 function renderHearts() {
     heartArray.forEach(heart => {
         renderHeart(heart)
     })
 }
 
+//Renders a single Heart Like
 function renderHeart(heart) {
     let heartParent = document.querySelector(".likes")
     let newHeartLike = document.createElement("li")
